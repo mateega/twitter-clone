@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CommentActivity">
+
+<!--    replying to-->
+    <TextView
+        android:id="@+id/tvReplyingTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/cvProfileImageComment"
+        android:text="Replying to "
+        tools:text="Replying to " />
+
+<!--    reply handle-->
+    <TextView
+        android:id="@+id/tvReplyHandle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/tvReplyingTo"
+        android:textColor="@color/twitterBlue"
+        tools:text="[at]spencermateega" />
+
+    <!--    profile image-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvProfileImageComment"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:elevation="12dp"
+        android:layout_below="@+id/tvReplyingTo"
+
+        android:innerRadius="0dp"
+        android:shape="ring"
+        app:cardCornerRadius="40dp">
+
+        <ImageView
+            android:id="@+id/ivProfileImageComment"
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            tools:srcCompat="@tools:sample/avatars" />
+    </androidx.cardview.widget.CardView>
+
+
+<!--    text input-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiLayoutComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@id/cvProfileImageComment"
+        android:layout_below="@id/tvReplyingTo"
+        app:counterEnabled="true"
+        app:counterMaxLength="280">
+
+        <EditText
+            android:id="@+id/etComposeComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="-430dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/tweet_reply"
+            android:inputType="textMultiLine"
+            android:minLines="5" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--    tweet button-->
+    <Button
+        android:id="@+id/bTweetComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/tweet" />
+
+</RelativeLayout>

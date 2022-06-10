@@ -6,13 +6,39 @@
     android:layout_height="wrap_content"
     android:layout_margin="5dp">
 
-    <ImageView
-        android:id="@+id/ivProfileImage"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvProfileImage"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:elevation="12dp"
+
+        android:innerRadius="0dp"
+        android:shape="ring"
+        app:cardCornerRadius="40dp">
+
+        <ImageView
+            android:id="@+id/ivProfileImage"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvNickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/cvProfileImage"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        tools:text="Spencer Mateega" />
 
     <TextView
         android:id="@+id/tvScreenName"
@@ -20,8 +46,19 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="0dp"
-        android:layout_toEndOf="@+id/ivProfileImage"
-        tools:text="spencermateega" />
+        android:layout_toEndOf="@+id/tvNickname"
+        tools:text="[at]spencermateega" />
+
+    <TextView
+        android:id="@+id/tvCreatedAt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/tvScreenName"
+        tools:text="· 16h"
+
+        />
 
     <TextView
         android:id="@+id/tvBody"
@@ -30,6 +67,81 @@
         android:layout_below="@+id/tvScreenName"
         android:layout_marginStart="5dp"
         android:layout_marginTop="2dp"
-        android:layout_toEndOf="@+id/ivProfileImage"
+        android:layout_toEndOf="@+id/cvProfileImage"
+        android:textColor="@android:color/black"
         tools:text="This is my tweet!" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ivMediaHolder"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        app:cardCornerRadius="8dp"
+        android:layout_margin="5dp"
+
+        android:layout_below="@+id/tvBody"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/cvProfileImage"
+        android:visibility="gone"
+
+
+        android:elevation="10dp">
+
+        <ImageView
+            android:id="@+id/ivMedia"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+
+            android:visibility="visible"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+    </androidx.cardview.widget.CardView>
+
+
+
+
+    <ImageView
+        android:id="@+id/ivComment"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_below="@+id/ivMediaHolder"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/cvProfileImage"
+
+        tools:srcCompat="@drawable/comment" />
+
+    <ImageView
+        android:id="@+id/ivRetweet"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_below="@+id/ivMediaHolder"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/cvProfileImage"
+
+        tools:srcCompat="@drawable/retweet" />
+
+    <ImageView
+        android:id="@+id/ivHeart"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_below="@+id/ivMediaHolder"
+        android:layout_marginStart="205dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/cvProfileImage"
+
+        tools:srcCompat="@drawable/heart" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:layout_below="@+id/ivComment"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/darker_gray" />
+
+
+
+
 </RelativeLayout>

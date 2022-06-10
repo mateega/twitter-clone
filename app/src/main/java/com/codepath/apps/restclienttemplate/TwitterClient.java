@@ -33,7 +33,7 @@ public class TwitterClient extends OAuthBaseClient {
 	// See https://developer.chrome.com/multidevice/android/intents
 	public static final String REST_CALLBACK_URL_TEMPLATE = "intent://%s#Intent;action=android.intent.action.VIEW;scheme=%s;package=%s;S.browser_fallback_url=%s;end";
 
-	public TwitterClient(Context context) {
+    public TwitterClient(Context context) {
 		super(context, REST_API_INSTANCE,
 				REST_URL,
 				REST_CONSUMER_KEY,
@@ -42,7 +42,7 @@ public class TwitterClient extends OAuthBaseClient {
 				String.format(REST_CALLBACK_URL_TEMPLATE, context.getString(R.string.intent_host),
 						context.getString(R.string.intent_scheme), context.getPackageName(), FALLBACK_URL));
 	}
-	// CHANGE THIS
+
 	// DEFINE METHODS for different API endpoints here
 	public void getHomeTimeline(JsonHttpResponseHandler handler) {
 		String apiUrl = getApiUrl("statuses/home_timeline.json");
@@ -52,6 +52,49 @@ public class TwitterClient extends OAuthBaseClient {
 		params.put("since_id", 1);
 		client.get(apiUrl, params, handler);
 	}
+
+	public void publishTweet(String tweetContent, JsonHttpResponseHandler handler) {
+		String apiUrl = getApiUrl("statuses/update.json");
+		// Can specify query string params directly or through RequestParams.
+		RequestParams params = new RequestParams();
+		params.put("status", tweetContent);
+
+		client.post(apiUrl, params, "", handler);
+	}
+
+	public void publishReply(String tweetContent, String replyStatusId, JsonHttpResponseHandler handler) {
+		String apiUrl = getApiUrl("statuses/update.json");
+		RequestParams params = new RequestParams();
+		params.put("status", tweetContent);
+		params.put("in_reply_to_status_id", replyStatusId);
+		client.post(apiUrl, params, "", handler);
+	}
+
+	public void likeTweet(String tweetId, Boolean like, JsonHttpResponseHandler handler) {
+		String apiUrl = getApiUrl("favorites/create.json");
+		RequestParams params = new RequestParams();
+		params.put("id", tweetId);
+		client.post(apiUrl, params, "", handler);
+	}
+
+
+
+
+
+
+
+
+
+//	public void getUser(JsonHttpResponseHandler handler) {
+//		String apiUrl = getApiUrl("users/me");
+//		RequestParams params = new RequestParams();
+//		client.get(apiUrl, params, handler);
+//
+//	}
+
+
+
+
 
 	/* 1. Define the endpoint URL with getApiUrl and pass a relative path to the endpoint
 	 * 	  i.e getApiUrl("statuses/home_timeline.json");
