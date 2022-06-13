@@ -8,26 +8,26 @@ Time spent: 20 hours spent in total
 
 The following **required** functionality is completed:
 
-* [ ] User can **sign in to Twitter** using OAuth login
-* [ ] User can **view tweets from their home timeline**
-  * [ ] User is displayed the username, name, and body for each tweet
-  * [ ] User is displayed the [relative timestamp](https://gist.github.com/nesquena/f786232f5ef72f6e10a7) for each tweet "8m", "7h"
-* [ ] User can ***log out of the application** by tapping on a logout button
-* [ ] User can **compose and post a new tweet**
-  * [ ] User can click a “Compose” icon in the Action Bar on the top right
-  * [ ] User can then enter a new tweet and post this to Twitter
-  * [ ] User is taken back to home timeline with **new tweet visible** in timeline
-  * [ ] Newly created tweet should be manually inserted into the timeline and not rely on a full refresh
-* [ ] User can **see a counter that displays the total number of characters remaining for tweet** that also updates the count as the user types input on the Compose tweet page
-* [ ] User can **pull down to refresh tweets timeline**
-* [ ] User can **see embedded image media within a tweet** on list or detail view.
+* [X] User can **sign in to Twitter** using OAuth login
+* [X] User can **view tweets from their home timeline**
+  * [X] User is displayed the username, name, and body for each tweet
+  * [X] User is displayed the [relative timestamp](https://gist.github.com/nesquena/f786232f5ef72f6e10a7) for each tweet "8m", "7h"
+* [X] User can ***log out of the application** by tapping on a logout button
+* [X] User can **compose and post a new tweet**
+  * [X] User can click a “Compose” icon in the Action Bar on the top right
+  * [X] User can then enter a new tweet and post this to Twitter
+  * [X] User is taken back to home timeline with **new tweet visible** in timeline
+  * [X] Newly created tweet should be manually inserted into the timeline and not rely on a full refresh
+* [X] User can **see a counter that displays the total number of characters remaining for tweet** that also updates the count as the user types input on the Compose tweet page
+* [X] User can **pull down to refresh tweets timeline**
+* [X] User can **see embedded image media within a tweet** on list or detail view.
 
 The following **optional** features are implemented:
 
-* [ ] User is using **"Twitter branded" colors and styles**
-* [ ] User sees an **indeterminate progress indicator** when any background or network task is happening
-* [ ] User can **select "reply" from home timeline to respond to a tweet**
-  * [ ] User that wrote the original tweet is **automatically "@" replied in compose**
+* [X] User is using **"Twitter branded" colors and styles**
+* [X] User sees an **indeterminate progress indicator** when any background or network task is happening
+* [X] User can **select "reply" from home timeline to respond to a tweet**
+  * [X] User that wrote the original tweet is **automatically "@" replied in compose**
 
 ## Video Walkthrough
 
